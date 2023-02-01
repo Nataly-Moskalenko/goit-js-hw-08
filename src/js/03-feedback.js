@@ -27,7 +27,7 @@ function handleSubmit(event) {
     email: email.value,
     message: message.value,
   });
-  form.reset();
+  event.currentTarget.reset();
   localStorage.clear();
 }
 
@@ -35,5 +35,8 @@ form.addEventListener('input', throttle(saveValues, 500));
 form.addEventListener('submit', handleSubmit);
 
 const parsedValues = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-input.value = parsedValues.email;
-textarea.value = parsedValues.message;
+
+if (localStorage.getItem(LOCALSTORAGE_KEY)) {
+  input.value = parsedValues.email;
+  textarea.value = parsedValues.message;
+}
