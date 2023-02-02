@@ -1,6 +1,8 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryItems } from './gallery-items';
+import '../css/01-gallery.css';
+import '../css/common.css';
 
 function createImageCardsMarkup(images) {
   return images
